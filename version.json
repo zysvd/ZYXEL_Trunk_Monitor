@@ -1,5 +1,5 @@
 {
-    "version": "1.2.0", 
-    "download_url": "https://github.com/zysvd/Zy-Packet-Generator/releases/download/v1.1.0/Zy-Packet-Generator.exe",
+    "version": "1.0.0", 
+    "download_url": "https://github.com/zysvd/ZYXEL_Trunk_Monitor/releases/download/v1.1.0/ZYXEL_Trunk_Monitor.exe",
     "release_notes": "1. 支援自訂 Profile 儲存功能"
 }
