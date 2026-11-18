@@ -1,5 +1,5 @@
 {
-    "version": "1.0.0", 
-    "download_url": "https://github.com/zysvd/ZYXEL_Trunk_Monitor/releases/download/v1.1.0/ZYXEL_Trunk_Monitor.exe",
-    "release_notes": "1. 支援自訂 Profile 儲存功能"
+    "version": "v1.0.3", 
+    "url": "https://github.com/zysvd/ZYXEL_Trunk_Monitor/releases/download/v1.0.3/Zyxel_Trunk_Monitor.exe",
+    "release_notes": "1. 升級啟動為背景非同步更新模式，防止同步連線卡頓\n2. 新增數位 HUD 進度提示，確保 0.1 秒秒開啟動體驗"
 }
