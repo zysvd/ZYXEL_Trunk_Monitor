@@ -1,7 +1,7 @@
 # 🌐 ZYXEL Trunk Monitor
 
 <!-- 專案狀態與規格標籤 (Badges)，彰顯專案的專業度與維護狀態 -->
-![Version](https://img.shields.io/badge/Version-v1.0.4-00f0ff?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-v1.0.6-00f0ff?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.8+-00ff9d?style=for-the-badge&logo=python&logoColor=black)
 ![Platform](https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge&logo=windows)
 ![Theme](https://img.shields.io/badge/Theme-Dark%20Cyber%20%2F%20NOC-121820?style=for-the-badge)
@@ -15,6 +15,7 @@
 
 ## 📌 核心功能 (Key Features)
 
+* 🔍 **SNMP Walk 智慧巡覽與精準探測**：全面引進標準 SNMP GetNext (`0xa1`) 巡覽技術，自動遞迴遍歷 `ifName` 與 `ifDescr` 關聯。不論 Zyxel 設備實體 Port Index 如何跳號或非連續，皆能在 0.5 秒內精準識別並自動綁定 `名稱 (Index X)`。
 * 🔄 **一鍵全自動熱覆蓋更新（Hot-Swap Auto Update）**：點選同意更新後，程式會自動在背景安全下載 `.exe`，並透過無窗中繼腳本在舊版安全退出後，自動完成無感覆蓋與重新啟動。
 * 🔒 **零本機路徑洩露保護（Zero Path Leakage）**：下載與更新過程中，所有對話框、狀態列 HUD 與執行日誌皆**完全隱藏**任何本機暫存路徑（如 `C:\Users\...` 或 `Temp` 目錄），全面防範測試機台隱私洩露。
 * 🛡️ **自訂 Active / Passive 通道屬性**：支援動態管理與映射多組自訂介面，明確指派 `Active (主動分流)` 或 `Passive (熱備援)` 成員，圖表自動以實線（Active）與虛線（Passive）進行視覺區隔。
@@ -37,8 +38,16 @@ ZYXEL_Trunk_Monitor/
 └── assets/
     └── ZYXEL.png            # 軟體執行期 (視窗左上角/工作列) 顯示之高解析度圖示
 
+📅 版本變更歷史 (Version History)
+🔍 v1.0.5 (2026-11-19) - [SNMP Walk & Dual-Engine Edition]
+修復：補齊 TimeTicks (Tag 0x43)、Counter32 等 ASN.1 型態解析，完美解決舊版在 USG FLEX 因預檢 sysUpTime 格式不合導致的「連線誤判」問題。
 
-### 📅 版本變更歷史 (Version History)
+新增：導入標準 SNMP Walk (GetNext) 智慧巡覽引擎，自動遞迴走訪 ifName 與 ifDescr，秒速取得最完整的埠對應關係。
+
+新增：介面選單採用「名稱 (Index X)」防碰撞命名法，徹底解決多埠同名（如全數回傳 GigabitEthernet）導致的字典覆蓋與掃描漏洞。
+
+修復：修正 GUI 兩處 padding 初始化缺失導致的啟動 SyntaxError。
+
 🔄 v1.0.4 (2026-11-18) - [NOC Seamless Update Edition]
 新增：一鍵自體熱覆蓋更新重啟機制，使用者點選後全自動升級，無需手動複製替換。
 
