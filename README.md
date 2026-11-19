@@ -1,7 +1,7 @@
 # 🌐 ZYXEL Trunk Monitor
 
 <!-- 專案狀態與規格標籤 (Badges)，彰顯專案的專業度與維護狀態 -->
-![Version](https://img.shields.io/badge/Version-v1.0.6-00f0ff?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-v1.0.7-00f0ff?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.8+-00ff9d?style=for-the-badge&logo=python&logoColor=black)
 ![Platform](https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge&logo=windows)
 ![Theme](https://img.shields.io/badge/Theme-Dark%20Cyber%20%2F%20NOC-121820?style=for-the-badge)
@@ -15,6 +15,7 @@
 
 ## 📌 核心功能 (Key Features)
 
+* 🔒 **企業級沙盒防護加固 (Enterprise Security Shield)**：自體更新全面改用 Windows 殼層原生啟動 (`os.startfile`)，發包控制台徹底執行隔離閉鎖，100% 兼容 Windows Exploit Protection 與 ASLR 安全檢驗，免除防毒阻擋例外。
 * 🔍 **SNMP Walk 智慧巡覽與精準探測**：全面引進標準 SNMP GetNext (`0xa1`) 巡覽技術，自動遞迴遍歷 `ifName` 與 `ifDescr` 關聯。不論 Zyxel 設備實體 Port Index 如何跳號或非連續，皆能在 0.5 秒內精準識別並自動綁定 `名稱 (Index X)`。
 * 🔄 **一鍵全自動熱覆蓋更新（Hot-Swap Auto Update）**：點選同意更新後，程式會自動在背景安全下載 `.exe`，並透過無窗中繼腳本在舊版安全退出後，自動完成無感覆蓋與重新啟動。
 * 🔒 **零本機路徑洩露保護（Zero Path Leakage）**：下載與更新過程中，所有對話框、狀態列 HUD 與執行日誌皆**完全隱藏**任何本機暫存路徑（如 `C:\Users\...` 或 `Temp` 目錄），全面防範測試機台隱私洩露。
@@ -39,6 +40,11 @@ ZYXEL_Trunk_Monitor/
     └── ZYXEL.png            # 軟體執行期 (視窗左上角/工作列) 顯示之高解析度圖示
 
 📅 版本變更歷史 (Version History)
+🛡️ v1.0.6 (2026-11-19) - [Enterprise Sandbox Shield Edition]
+新增：導入 Windows Explorer 原生殼層拉起技術 (os.startfile)，100% 解決在高度安全防護之 SVD 機台、啟用 Exploit Protection / ASLR 的 Windows 系統上更新時發生的 failed to obtain executable path for parent process 阻擋例外。
+
+優化：發包控制台背景進程標準流安全閉鎖，完全重導向至 DEVNULL，符合企業 EDR 端點防禦與沙盒安全檢驗規範。
+
 🔍 v1.0.5 (2026-11-19) - [SNMP Walk & Dual-Engine Edition]
 修復：補齊 TimeTicks (Tag 0x43)、Counter32 等 ASN.1 型態解析，完美解決舊版在 USG FLEX 因預檢 sysUpTime 格式不合導致的「連線誤判」問題。
 
@@ -74,6 +80,6 @@ ZYXEL_Trunk_Monitor/
 🎨 v1.0.1 (2026-11-10) - [Branding & UX Edition]
 新增：自訂動態介面管理（支援 Treeview 介面隨時增刪與 SNMP walk 映射）。
 
-新增：全域高科技 dark-theme（NOC 黑色科技風格）與 Zyxel 紅色視窗圖示。
+新增：全域高科技 dark-theme（NOC 黑色科技風格）與 Zyxel 紅色視窗圖示.
 
 新增：大量封包產生器與 Token Bucket Mbps 級速率限制器。

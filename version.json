@@ -1,5 +1,5 @@
 {
-    "version": "v1.0.5", 
-    "url": "https://github.com/zysvd/ZYXEL_Trunk_Monitor/releases/download/v1.0.5/Zyxel_Trunk_Monitor.exe",
-    "release_notes": "1. 導入標準 SNMP Walk (GetNext) 介面自動巡覽引擎\n2. 補齊 TimeTicks 0x43 與各類計數器 Tag 解析，修復 USG FLEX 連線誤判\n3. 介面採「名稱 (Index X)」防碰撞命名，徹底根除同名覆蓋問題"
+    "version": "v1.0.6", 
+    "url": "https://github.com/zysvd/ZYXEL_Trunk_Monitor/releases/download/v1.0.6/Zyxel_Trunk_Monitor.exe",
+    "release_notes": "1. 導入 Windows Shell 原生啟動機制，修復企業 EDR/ASLR 安全防禦阻擋\n2. 大量發包程序串流隔離加固，完全兼容 Windows Exploit Protection"
 }
