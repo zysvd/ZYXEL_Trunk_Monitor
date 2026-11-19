@@ -1,7 +1,7 @@
 # 🌐 ZYXEL Trunk Monitor
 
 <!-- 專案狀態與規格標籤 (Badges)，彰顯專案的專業度與維護狀態 -->
-![Version](https://img.shields.io/badge/Version-v1.0.7-00f0ff?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-v1.0.6-00f0ff?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.8+-00ff9d?style=for-the-badge&logo=python&logoColor=black)
 ![Platform](https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge&logo=windows)
 ![Theme](https://img.shields.io/badge/Theme-Dark%20Cyber%20%2F%20NOC-121820?style=for-the-badge)
